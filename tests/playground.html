@@ -14,6 +14,7 @@
       import {javascriptGenerator} from '../build/javascript.loader.mjs';
       import {phpGenerator} from '../build/php.loader.mjs';
       import {pythonGenerator} from '../build/python.loader.mjs';
+      import {cGenerator} from '../build/c.loader.mjs';
 
       await loadScript('../build/msg/en.js');
       await loadScript('playgrounds/screenshot.js');
@@ -193,6 +194,7 @@
           'PHP': phpGenerator,
           'Lua': luaGenerator,
           'Dart': dartGenerator,
+          'C': cGenerator,
         }[lang];
         var output = document.getElementById('importExport');
         output.value = generator.workspaceToCode(workspace);
@@ -439,6 +441,9 @@
         document
           .getElementById('to-code-dart')
           .addEventListener('click', () => toCode('Dart'));
+        document
+          .getElementById('to-code-c')
+          .addEventListener('click', () => toCode('C'));
 
         document
           .getElementById('airstrike')
@@ -561,6 +566,7 @@
       <input id="to-code-php" type="button" value="To PHP" />
       <input id="to-code-lua" type="button" value="To Lua" />
       <input id="to-code-dart" type="button" value="To Dart" />
+      <input id="to-code-c" type="button" value="To C" />
       <br />
       <textarea id="importExport" style="width: 26%; height: 12em"></textarea>
     </p>

@@ -151,6 +151,13 @@ const chunks = [
     scriptExport: 'dart',
     scriptNamedExports: {'Blockly.Dart': 'dartGenerator'},
   },
+  {
+    name: 'c',
+    files: ['generators/c.js', 'generators/c/**/*.js'],
+    entry: 'generators/c.js',
+    scriptExport: 'c',
+    scriptNamedExports: {'Blockly.C': 'cGenerator'},
+  },
 ];
 
 chunks[0].parent = null;
